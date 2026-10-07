@@ -4,7 +4,8 @@ import streamlit as st
 from core import kev, links
 
 st.set_page_config(page_title="VulnPulse Intel Hub", page_icon="📡", layout="wide")
-st.title("📡 VulnPulse Intel Hub")
+st.title("📡 VulnPulse Intel Hub") 
+("-By Div")
 st.write(
     "Public vulnerability intelligence in one place: watch your products, track CISA KEV deadlines "
     "and check whether a CVE has public exploit code. No logins, no uploads, no user data stored."
