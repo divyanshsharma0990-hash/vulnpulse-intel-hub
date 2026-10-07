@@ -2,8 +2,11 @@ import pandas as pd
 import streamlit as st
 
 from core import kev, links
+from core.theme import apply_theme
 
 st.set_page_config(page_title="VulnPulse Intel Hub", page_icon="📡", layout="wide")
+
+apply_theme()
 st.title("📡 VulnPulse Intel Hub") 
 ("-By Div")
 st.write(
