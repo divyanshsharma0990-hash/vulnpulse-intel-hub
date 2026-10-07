@@ -2,8 +2,10 @@ import pandas as pd
 import streamlit as st
 
 from core import kev, links
+from core.theme import apply_theme
 
 st.set_page_config(page_title="KEV dashboard", page_icon="🚨", layout="wide")
+apply_theme()
 st.title("🚨 CISA KEV dashboard")
 st.caption("Due dates come from CISA's catalog and apply to US federal agencies (BOD 22-01). "
            "Many organisations use them as a benchmark.")

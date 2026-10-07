@@ -5,8 +5,10 @@ import pandas as pd
 import streamlit as st
 
 from core import digest, enrich, exploits, links, nvd
+from core.theme import apply_theme
 
 st.set_page_config(page_title="Watchlist digest", page_icon="📰", layout="wide")
+apply_theme()
 st.title("📰 Watchlist digest")
 st.caption("The list lives only in this browser session. Nothing is stored on the server.")
 
