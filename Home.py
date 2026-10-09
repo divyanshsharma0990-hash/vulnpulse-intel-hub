@@ -9,6 +9,7 @@ st.set_page_config(page_title="VulnPulse Intel Hub", page_icon="📡", layout="w
 apply_theme()
 st.title("📡 VulnPulse Intel Hub") 
 LINKEDIN_URL = "https://www.linkedin.com/in/divyansh-sharma-8113b5113"
+PATCHPILOT_URL = "https://patchpilot.streamlit.app/"
 
 st.markdown(
     f'''
@@ -49,5 +50,9 @@ with c:
     st.caption("PoC, Metasploit, Nuclei and Exploit-DB status for a CVE.")
 
 st.divider()
-st.link_button("Open Risk Calculator", links.calc_url())
+b1, b2, _ = st.columns([2, 2, 5])
+with b1:
+    st.link_button("Open Risk Calculator", links.calc_url())
+with b2:
+    st.link_button("🛠️ Open PatchPilot", PATCHPILOT_URL)
 st.caption("Sources: NVD, CISA KEV, FIRST EPSS, Metasploit, Nuclei templates, Exploit-DB, GitHub.")
