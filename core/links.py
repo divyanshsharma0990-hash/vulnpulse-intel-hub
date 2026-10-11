@@ -11,3 +11,8 @@ def calc_url(cve=None):
 
 def nvd_url(cve):
     return f"https://nvd.nist.gov/vuln/detail/{cve}"
+
+
+def patch_url(cve=None):
+    base = config.patchpilot_url()
+    return f"{base}/?cve={quote(cve)}" if cve else base

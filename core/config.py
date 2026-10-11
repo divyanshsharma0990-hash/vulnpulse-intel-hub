@@ -38,3 +38,6 @@ def github_token():
 
 def risk_calc_url():
     return str(get_setting("RISK_CALC_URL", "https://div-cve-risk-calc.streamlit.app")).rstrip("/")
+
+def patchpilot_url():
+    return str(get_setting("PATCHPILOT_URL", "https://patchpilot.streamlit.app")).rstrip("/")

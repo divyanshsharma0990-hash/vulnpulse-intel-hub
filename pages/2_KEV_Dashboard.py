@@ -58,8 +58,9 @@ c4.metric("Ransomware use", int(view["ransomware"].sum()))
 
 out = view.assign(
     NVD=view["cve"].map(links.nvd_url),
-    **{"Risk calc": view["cve"].map(links.calc_url)},
-)[["cve", "vendor", "product", "name", "date_added", "due_date", "days_left", "ransomware", "NVD", "Risk calc"]]
+    **{"Risk calc": view["cve"].map(links.calc_url),
+       "PatchPilot": view["cve"].map(links.patch_url)},
+)[["cve", "vendor", "product", "name", "date_added", "due_date", "days_left", "ransomware", "NVD", "Risk calc", "PatchPilot"]]
 
 st.dataframe(
     out,
@@ -70,6 +71,7 @@ st.dataframe(
         "days_left": st.column_config.NumberColumn("Days left"),
         "NVD": st.column_config.LinkColumn(display_text="Open"),
         "Risk calc": st.column_config.LinkColumn(display_text="Open"),
+        "PatchPilot": st.column_config.LinkColumn(display_text="Open"),
     },
 )
 st.download_button("Download filtered CSV", view.to_csv(index=False), file_name="kev-filtered.csv")

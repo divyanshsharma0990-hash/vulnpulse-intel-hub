@@ -72,6 +72,7 @@ if state:
                 "Published": r["published"],
                 "NVD": links.nvd_url(r["id"]),
                 "Risk calc": links.calc_url(r["id"]),
+                "PatchPilot": links.patch_url(r["id"]),
             }
             for r in recs
         ])
@@ -82,6 +83,7 @@ if state:
                 "EPSS": st.column_config.NumberColumn(format="%.3f"),
                 "NVD": st.column_config.LinkColumn(display_text="Open"),
                 "Risk calc": st.column_config.LinkColumn(display_text="Open"),
+                "PatchPilot": st.column_config.LinkColumn(display_text="Open"),
             },
         )
         with st.expander("Details for P1 / P2"):
